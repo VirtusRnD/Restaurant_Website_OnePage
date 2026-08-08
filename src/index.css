@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+
+/* Glassmorphism Efekti */
+.glass-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary, #070709);
+  color: var(--text-main, #f4f4f6);
+  overflow-x: hidden;
+}

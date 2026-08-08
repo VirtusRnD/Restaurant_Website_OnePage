@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* 1. MICHELIN DARK (Ağır Siyah, Keskin Altın Çizgiler & Playfair Serif Elegansı - Fine Dining) */
+[data-theme="michelin-dark"] {
+  --bg-primary: #070709;
+  --bg-card: #121217;
+  --text-main: #f9f9fb;
+  --text-muted: #9494a0;
+  --accent: #d4af37;
+  --accent-glow: rgba(212, 175, 55, 0.15);
+  --border-color: #2a2a35;
+  --card-radius: 0.5rem; /* Keskin, lüks köşeler */
+  --font-heading: 'Playfair Display', serif;
+}
+
+/* 2. NORDIC ZEN (Buzlu Cam, Derin Orman Yeşili & Şampanya Rengi - İskandinav Minimalizmi) */
+[data-theme="nordic-zen"] {
+  --bg-primary: #0e1412;
+  --bg-card: rgba(20, 32, 28, 0.65);
+  --text-main: #edf2f0;
+  --text-muted: #829c90;
+  --accent: #d1c29b;
+  --accent-glow: rgba(209, 194, 155, 0.1);
+  --border-color: rgba(209, 194, 155, 0.18);
+  --card-radius: 1.25rem; /* Yumuşak, dingin hatlar */
+  --font-heading: 'Cormorant Garamond', serif;
+}
+
+/* 3. TRATTORIA WARM (Gece Bordo, Sıcak Terracotta & Cinzel Klasik - İtalyan Trattoria) */
+[data-theme="trattoria-warm"] {
+  --bg-primary: #14080a;
+  --bg-card: #211013;
+  --text-main: #fcf6f0;
+  --text-muted: #c4a49c;
+  --accent: #e27d60;
+  --accent-glow: rgba(226, 125, 96, 0.2);
+  --border-color: #3b1d22;
+  --card-radius: 2rem; /* Yuvarlak, samimi sıcak hatlar */
+  --font-heading: 'Cinzel', serif;
+}
+
+/* 4. CYBER FUSION (Derin Siber Mavi, Keskin Neon Pembe/Mor & Geometrik - Modern Füzyon) */
+[data-theme="cyber-fusion"] {
+  --bg-primary: #030308;
+  --bg-card: #0c0c1c;
+  --text-main: #ffffff;
+  --text-muted: #8888b5;
+  --accent: #ff0055;
+  --accent-glow: rgba(255, 0, 85, 0.3);
+  --border-color: #1f1f42;
+  --card-radius: 0rem; /* Tamamen keskin endüstriyel köşeler */
+  --font-heading: 'Syne', sans-serif;
+}
+
+/* 5. RUSTIC FIRE (Meşe Kömürü, Kalın Çerçeve, Kehribar Ateş Vurgusu - Taş Fırın & Et Lokantası) */
+[data-theme="rustic-fire"] {
+  --bg-primary: #0c0906;
+  --bg-card: #18120d;
+  --text-main: #f7f2ea;
+  --text-muted: #a69888;
+  --accent: #f59e0b;
+  --accent-glow: rgba(245, 158, 11, 0.15);
+  --border-color: #36291e;
+  --card-radius: 0.75rem; /* D sağlam, rustik hatlar */
+  --font-heading: 'Bodoni Moda', serif;
+}
+
+/* ORTAK DÖNÜŞÜM VE BİLEŞEN STİLLERİ */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-heading), system-ui, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Temaya Göre Değişen Dinamik Kart Sınıfı */
+.theme-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 15px 35px -10px var(--accent-glow);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px var(--accent-glow);
+}
